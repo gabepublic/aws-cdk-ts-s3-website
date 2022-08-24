@@ -48,7 +48,8 @@ $ cdk bootstrap aws://ACCOUNT-NUMBER/REGION
     `cdk deploy` will fail indicating that the account has not been "bootstrap",
     but attempt to cdk bootstrap will look like success with "no change" shown
     on the output, but the S3 bucket is not created and the `cdk deploy` will 
-    still fail, as shown [here](https://digitalcompanion.gitbook.io/home/setup/aws/cli-and-cloudshell#cdk).
+    still fail, as shown in 
+    [Troubleshsooting - cdk deploy error: fail: No bucket named; Is account <acct#> bootstrapped?](https://digitalcompanion.gitbook.io/home/setup/aws/cli-and-cloudshell#troubleshooting).
     The reason is because cdk bootstrap still detects the CloudFormation 
     resource, i.e., "CDKToolkit".
 
