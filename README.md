@@ -163,8 +163,6 @@ $ cd <project-folder>/aws-cdk-ts-s3-website/cdk
 $ npm install
 ```
 
-- Next, deploying the website to S3 using CDK
-
 - Synthesize an AWS CloudFormation template
 ```
 $ cd <project-folder>/aws-cdk-ts-s3-website/cdk
@@ -292,7 +290,7 @@ arn:aws:cloudformation:us-west-2:349327579537:stack/CdkStack/a3aade50-226c-11ed-
 ## TEST
 
 - Check AWS S3 console, a new bucket 
-  `cdkstack-awscdktys3websitebucket22756c2e-187rc8tp7sn0k` has been 
+  `cdkstack-awscdktys3websitebucket22756c2e-187rc8tp7sn0k` has been created
 
 - Open browser and the "Welcome" page is displayed when go to the following: 
   - `http://cdkstack-awscdktys3websitebucket22756c2e-187rc8tp7sn0k.s3-website-us-west-2.amazonaws.com`
