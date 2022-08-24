@@ -13,11 +13,6 @@ export class CdkStack extends cdk.Stack {
     super(scope, id, props);
 
     // ** Create the S3 bucket to store the website file
-    // Note: Do not use the websiteIndexDocument or websiteErrorDocument props of 
-    // the Bucket construct if you pan to use CloudFront to front the website.
-    // Passing these will cause the Bucket to be automatically configured as 
-    // “website enabled”, which is not intended for CloudFront setup.
-    //       accessControl: s3.BucketAccessControl.PUBLIC_READ,
     const bucket = new s3.Bucket(this, 'aws-cdk-ty-s3-website-bucket', {
       publicReadAccess: true,
       websiteIndexDocument: 'index.html',
@@ -27,10 +22,8 @@ export class CdkStack extends cdk.Stack {
     })
 
     // Deploying the website to the S3 bucket
-    // After deployment, if you try to access the S3 bucket directly using the 
-    // auto-generated URL (e.g., https://<bucket-name>.s3-us-west-2.amazonaws.com/ )
-    // from a browser, you will get AccessDenied error, because of the bucket
-    // accessControl policy set above
+    // After deployment, use the auto-generated URL from the browser
+    //(e.g., http://<bucket-name>.s3-us-west-2.amazonaws.com/ )
     const deployment = new s3deploy.BucketDeployment(this, 'aws-cdk-ty-s3-website-bucketdeployment', {
       destinationBucket: bucket,
       sources: [s3deploy.Source.asset(path.resolve(__dirname, '..', '..', 'src'))]
