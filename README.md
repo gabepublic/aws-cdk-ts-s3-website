@@ -21,7 +21,7 @@ See [Github: aws-cdk-ts-s3-cloudfront-website](https://github.com/gabepublic/aws
 - Clone this repo
 
 - **Note**: the `src` folder contains a very simple web site that we will deploy
-  to AWS S3
+  to AWS S3. The `cdk` folder contains the CDK stack code.
   
 - CDK has been "bootstrap"; otherwise 
   see [Bootstrapping](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html)
